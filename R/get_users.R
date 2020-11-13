@@ -36,7 +36,9 @@
 #' users_desired = 1000,
 #' api_token = "my-token")
 #' }
-
+users_desired <- 1000
+api_token <- "sk-live-ab5169ba652601a3c27eaee28cbacd9f052876cb"
+domain <- "academy.techsmith.com"
 get_users <- function(domain, users_desired, api_token, encoding_ = "UTF-8"){
   total_pages <- floor(users_desired / 10000) + 1
   pages_list <- seq(from = 1, to = total_pages, by = 1)
@@ -52,7 +54,7 @@ get_users <- function(domain, users_desired, api_token, encoding_ = "UTF-8"){
       "Authorization" = paste("Basic", gsub("\n", "", token)),
       "Content-Type" = "application/x-www-form-urlencoded;charset=UTF-8"
     ), type = "basic")
-    get_text <- httr::content(get_results, "text", encoding = encoding_)
+    get_text <- httr::content(get_results, "text", encoding = "UTF-8")
     get_json <- jsonlite::fromJSON(get_text, flatten = TRUE)
     iteration_df <- as.data.frame(get_json$results)
     return(iteration_df)

@@ -9,7 +9,7 @@ Install the development version with `devtools::install_github("chrisumphlett/sk
 
 ## Security
 Utilizing the API requires a token. This must be obtained by logging in
-at dashboard.skilljar.com and going to Organization -> API Credentials.
+at dashboard.skilljar.com and going to Organization / API Credentials.
 There are different strategies for storing api tokens securely. This package
 does not require nor nudge you towards any one strategy. That said, it is 
 an unnecessary risk to store the token in the script!
