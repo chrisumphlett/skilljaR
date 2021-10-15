@@ -1,0 +1,24 @@
+Package: skilljaR
+Title: Connect To Your 'Skilljar' Data With R
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Chris",
+           family = "Umphlett",
+           role = c("aut", "cre"),
+           email = "christopher.umphlett@gmail.com")
+Description: The package provides functions that simplify calls to the 
+    'Skilljar' API. See <https://api.skilljar.com/docs/> for documentation
+    on the 'Skilljar' API. This package is not supported by 'Skilljar'.
+Depends: R (>= 4.1.0)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+Imports:
+    httr (>= 1.4.2),
+    jsonlite (>= 1.7.2),
+    purrr (>= 0.3.4),
+    dplyr (>= 1.0.7),
+    magrittr (>= 2.0.1)
+RoxygenNote: 7.1.2

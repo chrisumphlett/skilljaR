@@ -1,0 +1,12 @@
+^LICENSE\.md$
+^.*\.Rproj$
+^\.Rproj\.user$
+dev.R
+testing.R
+cran-comments.md
+^CRAN-RELEASE$
+^\.github$
+.Rhistory
+academy_all_user_progress.RDS
+certification_all_user_progress.RDS
+news.md
