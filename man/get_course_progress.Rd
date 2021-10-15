@@ -38,7 +38,7 @@ users_desired = 10,
 api_token = "my-token")
 
 # Get course progress data
-progress <- get_course_progress(user_ids = users,
+progress <- get_course_progress(user_ids = unique(users$user.id),
 api_token = "my-token")
 }
 }

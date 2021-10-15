@@ -51,8 +51,6 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
                        .x,
                        "/published-courses")
     
-    idname <- .x
-    
     get_results <- httr::GET(api_path,
                              httr::add_headers(
                                "Authorization" = paste(
@@ -64,12 +62,13 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
                              type = "basic"
     )
     get_text <- httr::content(get_results, "text", encoding = encoding_)
-    user_progress <- jsonlite::fromJSON(get_text, flatten = TRUE) %>%
-      mutate(user_id = idname)
     
+    ## skip this if there were no results for the user
+    if(get_text != "[]"){
+      user_progress <- as.data.frame(jsonlite::fromJSON(get_text, flatten = TRUE)) %>%
+        mutate(user_id = .x) %>%
+        select(-.data$all_enrollments)
+    }
   }
   all_progress <- purrr::map_dfr(user_ids, map_across_users)
-  ## drop the all_enrollments column which was a list column with nested df
-  ## select() gives an error
-  # user_progress <- within(user_progress, rm(all_enrollments))
 }
