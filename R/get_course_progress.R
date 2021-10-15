@@ -62,7 +62,8 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
                              type = "basic"
     )
     get_text <- httr::content(get_results, "text", encoding = encoding_)
-    user_progress <- jsonlite::fromJSON(get_text, flatten = TRUE)
+    user_progress <- jsonlite::fromJSON(get_text, flatten = TRUE) %>%
+      mutate(user_id = .x)
     
   }
   all_progress <- purrr::map_dfr(user_ids, map_across_users)
