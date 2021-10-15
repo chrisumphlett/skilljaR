@@ -51,6 +51,8 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
                        .x,
                        "/published-courses")
     
+    idname <- .x
+    
     get_results <- httr::GET(api_path,
                              httr::add_headers(
                                "Authorization" = paste(
@@ -63,7 +65,7 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
     )
     get_text <- httr::content(get_results, "text", encoding = encoding_)
     user_progress <- jsonlite::fromJSON(get_text, flatten = TRUE) %>%
-      mutate(user_id = .x)
+      mutate(user_id = idname)
     
   }
   all_progress <- purrr::map_dfr(user_ids, map_across_users)
