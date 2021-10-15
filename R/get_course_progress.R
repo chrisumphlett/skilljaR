@@ -64,14 +64,6 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
     get_text <- httr::content(get_results, "text", encoding = encoding_)
     user_progress <- jsonlite::fromJSON(get_text, flatten = TRUE)
     
-    if (exists("all_user_progress")){
-      all_user_progress <- bind_rows(all_user_progress, user_progress) %>%
-        dplyr::mutate(user_id = .x)
-    } else {
-      all_user_progress <- user_progress %>%
-        dplyr::mutate(user_id = .x)
-    }
-    return(all_user_progress)
   }
   all_progress <- purrr::map_dfr(user_ids, map_across_users)
   ## drop the all_enrollments column which was a list column with nested df
