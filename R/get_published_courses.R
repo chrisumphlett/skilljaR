@@ -26,7 +26,7 @@
 #' @examples
 #' \dontrun{
 #' # Retrieve all published courses
-#' my_users <- get_published_courses(domain = "training.mycompany.com",
+#' courses <- get_published_courses(domain = "training.mycompany.com",
 #' api_token = "my-token")
 #' }
 
@@ -68,4 +68,5 @@ get_published_courses <- function(domain, api_token, encoding_ = "UTF-8"){
       api_path <- get_json$`next`
     }
   }
+  return(all_published_courses)
 }

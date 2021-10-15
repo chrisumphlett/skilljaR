@@ -28,7 +28,7 @@ an unnecessary risk to store the token in the script!
 \examples{
 \dontrun{
 # Retrieve all published courses
-my_users <- get_published_courses(domain = "training.mycompany.com",
+courses <- get_published_courses(domain = "training.mycompany.com",
 api_token = "my-token")
 }
 }
