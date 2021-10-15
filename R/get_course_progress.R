@@ -38,7 +38,7 @@
 #' api_token = "my-token")
 #' 
 #' # Get course progress data
-#' progress <- get_course_progress(user_ids = users,
+#' progress <- get_course_progress(user_ids = unique(users$user.id),
 #' api_token = "my-token")
 #' }
 
@@ -63,7 +63,7 @@ get_course_progress <- function(user_ids, api_token, encoding_ = "UTF-8"){
     )
     get_text <- httr::content(get_results, "text", encoding = encoding_)
     user_progress <- jsonlite::fromJSON(get_text, flatten = TRUE) %>%
-      dplyr::select(-.data$all_enrollments)
+      dplyr::select(-all_enrollments)
     
     if (exists("all_user_progress")){
       all_user_progress <- bind_rows(all_user_progress, user_progress) %>%
