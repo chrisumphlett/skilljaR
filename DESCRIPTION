@@ -1,6 +1,6 @@
 Package: skilljaR
 Title: Connect to Your 'Skilljar' Data with R
-Version: 0.0.1
+Version: 0.0.1.9000
 Authors@R: 
     person(given = "Chris",
            family = "Umphlett",
