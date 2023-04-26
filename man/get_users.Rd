@@ -4,28 +4,22 @@
 \alias{get_users}
 \title{Get All Users}
 \usage{
-get_users(domain, users_desired, api_token, encoding_ = "UTF-8")
+get_users(users_desired = 1e+08, api_token)
 }
 \arguments{
-\item{domain}{Domain of 'Skilljar' account}
-
 \item{users_desired}{Number of user records to return}
 
 \item{api_token}{Your personalized token provided by 'Skilljar'}
-
-\item{encoding_}{API data encoding, do not use unless there is an error}
 }
 \value{
 A data frame with users and user data
 }
 \description{
-Returns a data.frame with all users from a particular domain. The API
-only returns up to 10,000 users at a time. The function makes multiple
-requests to the API in order to return the desired number of users.
-The user needs to know, or guess, how many users they have if they want
-to return them all. You can select an arbitrarily large number to be 
-safe but it will result in a longer execution time as there will be 
-unnecessary API requests sent.
+Returns a data.frame with all users from a particular domain. If you have 
+many users and do not want to return them all at once, you may request
+fewer users to save time while doing development. The API returns up 10,000
+users at a time-- if you request more than 10,000, it will return in full
+page increments (a multiple of 10,000).
 }
 \details{
 Utilizing the API requires a token. This must be obtained by logging in
@@ -36,8 +30,7 @@ an unnecessary risk to store the token in the script!
 \examples{
 \dontrun{
 # Retrieve 1000 users
-my_users <- get_users(domain = "training.mycompany.com",
-users_desired = 1000,
+my_users <- get_users(users_desired = 1000,
 api_token = "my-token")
 }
 }

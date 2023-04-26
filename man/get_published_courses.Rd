@@ -4,14 +4,12 @@
 \alias{get_published_courses}
 \title{Get All Published Courses}
 \usage{
-get_published_courses(domain, api_token, encoding_ = "UTF-8")
+get_published_courses(domain, api_token)
 }
 \arguments{
 \item{domain}{Domain of 'Skilljar' account}
 
 \item{api_token}{Your personalized token provided by 'Skilljar'}
-
-\item{encoding_}{API data encoding, do not use unless there is an error}
 }
 \value{
 A data frame with all published course data

@@ -4,14 +4,12 @@
 \alias{get_course_progress}
 \title{Get Course Progress for a List of Users}
 \usage{
-get_course_progress(user_ids, api_token, encoding_ = "UTF-8")
+get_course_progress(user_ids, api_token)
 }
 \arguments{
 \item{user_ids}{Vector of user id's for which you want course progress data}
 
 \item{api_token}{Your personalized token provided by 'Skilljar'}
-
-\item{encoding_}{API data encoding, do not use unless there is an error}
 }
 \value{
 A data frame with users and user data

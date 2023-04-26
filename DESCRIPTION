@@ -1,5 +1,5 @@
 Package: skilljaR
-Title: Connect to Your 'Skilljar' Data with R
+Title: Connect to Your 'Skilljar' Data
 Version: 0.0.1.9000
 Authors@R: 
     person(given = "Chris",
@@ -17,6 +17,6 @@ Imports:
     httr (>= 1.4.2),
     jsonlite (>= 1.7.2),
     purrr (>= 0.3.4),
-    dplyr (>= 1.0.7),
+    dplyr (>= 1.1.0),
     magrittr (>= 2.0.1)
 RoxygenNote: 7.1.2
