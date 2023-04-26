@@ -9,7 +9,6 @@
 #' 
 #' @param domain Domain of 'Skilljar' account
 #' @param api_token Your personalized token provided by 'Skilljar'
-#' @param encoding_ API data encoding, do not use unless there is an error
 #' 
 #' @import httr
 #' @importFrom purrr "is_empty"
@@ -30,7 +29,7 @@
 #' api_token = "my-token")
 #' }
 
-get_published_courses <- function(domain, api_token, encoding_ = "UTF-8"){
+get_published_courses <- function(domain, api_token){
 
   token <- jsonlite::base64_enc(api_token)
 
@@ -43,14 +42,13 @@ get_published_courses <- function(domain, api_token, encoding_ = "UTF-8"){
   
   while (keep_going == TRUE) {
     get_results <- httr::GET(api_path,
-                             httr::add_headers(
-                               "Authorization" = paste(
-                                 "Basic",
-                                 gsub("\n", "", token)),
-                               "Content-Type" = paste0(
-                                 "application/x-www-form-urlencoded;charset=",
-                                 encoding_)),
-                             type = "basic"
+                       httr::add_headers(
+                         "Authorization" = paste(
+                           "Basic",
+                           gsub("\n", "", token)),
+                         "Content-Type" = paste0(
+                           "application/x-www-form-urlencoded;charset=UTF-8")),
+                       type = "basic"
     )
     get_text <- httr::content(get_results, "text", encoding = "UTF-8")
     get_json <- jsonlite::fromJSON(get_text, flatten = TRUE)
