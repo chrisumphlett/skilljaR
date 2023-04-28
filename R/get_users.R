@@ -45,7 +45,7 @@ get_users <- function(users_desired = 100000000, api_token){
                              )),
                          type = "basic"
   )
-  get_text <- httr::content(get_results, "text", encoding = "UTF-8")
+  get_text <- httr::content(get_pages, "text", encoding = "UTF-8")
   total_pages <- floor(
                   jsonlite::fromJSON(get_text, flatten = TRUE)$count / 10000
                   ) + 1
@@ -60,8 +60,8 @@ get_users <- function(users_desired = 100000000, api_token){
       page_length,
       "&page=",
       x)
-    message(x)
-    get_results <- httr::GET(api_path,
+
+    api_return <- httr::GET(api_path,
                            httr::add_headers(
                              "Authorization" = paste(
                                "Basic",
@@ -71,7 +71,7 @@ get_users <- function(users_desired = 100000000, api_token){
                              )),
                            type = "basic"
                            )
-    get_text <- httr::content(get_results, "text", encoding = "UTF-8")
+    get_text <- httr::content(api_return, "text", encoding = "UTF-8")
     get_json <- jsonlite::fromJSON(get_text, flatten = TRUE)
     users_df <- as.data.frame(get_json$results)
     return(users_df)
