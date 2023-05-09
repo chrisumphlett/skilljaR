@@ -1,3 +1,7 @@
+# skilljaR 0.1.0.9000
+
+* dev version
+
 # skilljaR 0.1.0
 
 * API endpoint for `get_users()` changed, to an endpoint that provides the `latest_activity` for each user. This is a significant improvement, enabling one to retrieve only updated course progress for users who have recent activity.
