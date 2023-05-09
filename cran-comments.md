@@ -1,10 +1,10 @@
-## First package submission
+## Package update 0.1.0
 
-* This package is an API wrapper for Skilljar. Based on searches for "skilljar" across all of Github, and CRAN, I do not believe that anyone has developed an R wrapper for the Skilljar API.
+* A new endpoint for `get_users()` with multiple significant improvements for usability as a result.
 
 ## Test environments
 
-* Developed on and tested with Windows 10, R 4.1
+* Developed on and tested with Windows 11, R 4.1
 * Tested on R-devel with devtools::check_win_devel()
 * Testing against multiple Linux platforms with devtools::check_rhub()
 

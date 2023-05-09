@@ -44,8 +44,9 @@
 get_course_progress <- function(user_ids, api_token){
   
   token <- jsonlite::base64_enc(api_token)
-  
+  # i <- 1
   map_across_users <- function(.x){
+
     api_path <- paste0("https://api.skilljar.com/v1/users/",
                        .x,
                        "/published-courses")
@@ -68,6 +69,8 @@ get_course_progress <- function(user_ids, api_token){
         mutate(user_id = .x) %>%
         select(-.data$all_enrollments)
     }
+    # i <- 1 + 1
+
   }
   all_progress <- purrr::map_dfr(user_ids, map_across_users)
 }
