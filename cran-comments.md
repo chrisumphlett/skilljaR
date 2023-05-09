@@ -1,4 +1,4 @@
-## Package update 0.1.0
+## Package update 0.1.0de
 
 * A new endpoint for `get_users()` with multiple significant improvements for usability as a result.
 
