@@ -66,8 +66,8 @@ get_course_progress <- function(user_ids, api_token){
     if(get_text != "[]"){
       user_progress <- as.data.frame(jsonlite::fromJSON(get_text,
                                                         flatten = TRUE)) %>%
-        mutate(user_id = .x) %>%
-        select(-.data$all_enrollments)
+        dplyr::mutate(user_id = .x) %>%
+        dplyr::select(-.data$all_enrollments)
     }
     # i <- 1 + 1
 
