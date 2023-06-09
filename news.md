@@ -1,3 +1,7 @@
+# skilljaR 0.1.1.9000
+
+* Development version
+
 # skilljaR 0.1.1
 
 * Created `get_course_paths()` which will retrieve the list of paths and then the items (courses) associated with each path.

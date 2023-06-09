@@ -10,3 +10,4 @@ cran-comments.md
 academy_all_user_progress.RDS
 certification_all_user_progress.RDS
 news.md
+^CRAN-SUBMISSION$
