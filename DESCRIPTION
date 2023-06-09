@@ -1,6 +1,6 @@
 Package: skilljaR
 Title: Connect to Your 'Skilljar' Data
-Version: 0.1.0.9000
+Version: 0.1.1
 Authors@R: 
     person(given = "Chris",
            family = "Umphlett",
@@ -19,4 +19,4 @@ Imports:
     purrr (>= 0.3.4),
     dplyr (>= 1.1.0),
     magrittr (>= 2.0.1)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
