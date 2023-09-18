@@ -3,6 +3,7 @@
 export(get_course_paths)
 export(get_course_progress)
 export(get_published_courses)
+export(get_user_domain)
 export(get_users)
 import(dplyr)
 import(httr)

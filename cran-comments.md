@@ -1,6 +1,6 @@
-## Package update 0.1.1
+# Package Update 0.1.2
 
-* New function `get_course_paths()` which will retrieve the list of paths and then the items (courses) associated with each path.
+* Created `get_user_domain()` which will return a data frame with requested user id and a column indicating if the user is in the domain.
 
 ## Test environments
 
