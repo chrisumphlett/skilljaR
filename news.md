@@ -1,3 +1,7 @@
+# skilljaR 0.1.2.9000
+
+* Dev version
+
 # skilljaR 0.1.2
 
 * Created `get_user_domain()` which will return a data frame with requested user id and a column indicating if the user is in the domain.
